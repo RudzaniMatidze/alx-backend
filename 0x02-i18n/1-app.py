@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple Flask app
+Simple flask app
 """
 
 
@@ -10,7 +10,7 @@ from flask_babel import Babel
 
 class Config(object):
     """
-    Represents a Flask Babelconfiguration
+    Represents a Flask Babel configuration.
     """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
@@ -23,13 +23,13 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@app.rout('/')
-def get_index():
+@app.route('/')
+def index():
     """
-    The home/index page
+    The home/index page.
     """
     return render_template('1-index.html')
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(port="5000", host="0.0.0.0", debug=True)
